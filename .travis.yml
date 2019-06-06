@@ -20,12 +20,12 @@ jobs:
           repo: fabiandzp/bogota_app
       after_deploy: 'curl https://btn-dev-app1.herokuapp.com/'
 #hi
-    #- stage: deploy to QA
-     # script: skip
-      #deploy:
-      #  <<: *heroku
-      #  app: qa-btn-app
-      #after_deploy: 'curl https://qa-btn-app.herokuapp.com/'
+    - stage: deploy to QA
+      script: skip
+      deploy:
+        <<: *heroku
+        app: btn-qa-app2
+      after_deploy: 'curl https://qa-btn-app.herokuapp.com/'
 
     #- stage: UI Acceptance Test
     #  script: bash run_ui_tests.sh # TRIGGE TRAVIS UI FWK REPOSITORY
