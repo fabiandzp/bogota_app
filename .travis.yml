@@ -1,0 +1,31 @@
+language: python
+python:
+  - "3.6"
+
+install:
+  - "pip install -r requirements.txt"
+
+script: skip
+
+jobs:
+  include:
+    - stage: deploy to DEV
+      script: skip
+      deploy: &heroku
+        provider: heroku
+        app: btn-dev-app1
+        api_key: 
+          secure: 79652da1-65ba-4cc7-a9a6-1272cfa26012 # HEROKU API KEY
+        on:
+          repo: fabiandzp/bogota-app
+      after_deploy: 'curl https://dev-btn-app-hk.herokuapp.com/'
+
+    #- stage: deploy to QA
+     # script: skip
+      #deploy:
+      #  <<: *heroku
+      #  app: qa-btn-app
+      #after_deploy: 'curl https://qa-btn-app.herokuapp.com/'
+
+    #- stage: UI Acceptance Test
+    #  script: bash run_ui_tests.sh # TRIGGE TRAVIS UI FWK REPOSITORY
