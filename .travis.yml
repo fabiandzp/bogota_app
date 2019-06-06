@@ -27,5 +27,5 @@ jobs:
         app: btn-qa-app2
       after_deploy: 'curl https://qa-btn-app.herokuapp.com/'
 
-    #- stage: UI Acceptance Test
-    #  script: bash run_ui_tests.sh # TRIGGE TRAVIS UI FWK REPOSITORY
+    - stage: UI Acceptance Test
+      script: bash ui_tests.sh # TRIGGE TRAVIS UI FWK REPOSITORY
