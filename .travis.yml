@@ -18,8 +18,8 @@ jobs:
           secure: 79652da1-65ba-4cc7-a9a6-1272cfa26012 # HEROKU API KEY
         on:
           repo: fabiandzp/bogota-app
-      after_deploy: 'curl https://dev-btn-app-hk.herokuapp.com/'
-
+      after_deploy: 'curl https://btn-dev-app1.herokuapp.com/'
+#hi
     #- stage: deploy to QA
      # script: skip
       #deploy:
